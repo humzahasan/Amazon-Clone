@@ -16,3 +16,7 @@
     border-bottom : 1px solid lightgray;
     width : 100%;
 }
+
+.checkout__item {
+    display: flex;
+}
