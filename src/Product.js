@@ -1,10 +1,12 @@
 import React from 'react';
 import './Product.css';
 import {useStateValue} from './StateProvider';
+import {NotificationContainer, NotificationManager} from 'react-notifications';
 function Product({id, title, image, price, rating}) {
   const [{ basket }, dispatch] = useStateValue();
   
   const addToBasket = () => {
+
     //dispatch the item into the data layer
     dispatch({
       type: 'ADD_TO_BASKET',
@@ -18,8 +20,21 @@ function Product({id, title, image, price, rating}) {
     });
   };
 
+  const createNotification = (type) => {
+    return () => {
+      switch (type) {
+        case 'info':
+          NotificationManager.info(basket.item);
+          console.log("clicked");
+          break;
+
+        default : break;
+      }
+    }
+  };
   return (
     <div className='product'>
+      
       <div className='product__info'>
         <p>{title}</p>
         <p className='product__price'>
@@ -35,8 +50,9 @@ function Product({id, title, image, price, rating}) {
         </div>
       </div>
       <img src={image} alt='' />
-
-      <button onClick={addToBasket}>Add to Basket</button>
+     
+      <button onClick={ () => {addToBasket(); createNotification('info')() }}>Add to Basket</button>
+      <NotificationContainer/>
     </div>
   );
 }

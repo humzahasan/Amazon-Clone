@@ -1,8 +1,9 @@
 import React from 'react';
 import './Home.css';
 import Product from './Product';
-
+import { v4 as uuidv4 } from 'uuid';
 function Home() {
+  console.log(uuidv4());
   return (
     <div className='home'>
       <div className='home__container'>
@@ -14,6 +15,7 @@ function Home() {
 
         <div className='home__row'>
           <Product
+          key={uuidv4()}
           id={111}
             title='The Lean Startup: How Constant Innovation Creates Radically Successful Businesses'
             price={615.0}
@@ -21,6 +23,7 @@ function Home() {
             rating={5}
           />
           <Product
+          key={uuidv4()}
            id={112}
             title='Zero to One: Notes on Start Ups, or How to Build the Future'
             price={208.0}
@@ -31,6 +34,7 @@ function Home() {
 
         <div className='home__row'>
           <Product
+          key={uuidv4()}
            id={223}
             title='Apple iPad Mini (Wi-Fi + Cellular, 64GB) - Space Grey'
             price={45900.0}
@@ -38,6 +42,7 @@ function Home() {
             rating={5}
           />
           <Product
+          key={uuidv4()}
            id={221}
             title='Canon EOS 5D Mark IV 30.4 MP Digital SLR Camera (Black) + EF 24-105mm is II USM Lens Kit'
             price={264990.0}
@@ -45,6 +50,7 @@ function Home() {
             rating={5}
           />
           <Product
+          key={uuidv4()}
            id={222}
             title='LG 195 cms (77 inches) 4K Ultra HD Smart OLED TV OLED77C9PTA | With Built-in Alexa (Dark Meteo Titanium) (2019 Model)
             '
@@ -56,6 +62,7 @@ function Home() {
 
         <div className='home__row'>
           <Product
+          key={uuidv4()}
            id={331}
             title='HP Pavilion x360 core i7 10th Gen 14 inch FHD Touchscreen Laptop with Alexa Built-in (16GB/1TB SSD/Windows 10/MS Office 2019/Finger Print Reader/Natural Silver/1.61kg), 14-dw0071tu'
             price={100596.0}

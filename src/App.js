@@ -10,7 +10,7 @@ import {useStateValue} from './StateProvider';
 import Register from './Register';
 
 function App() {
-  const [{}, dispatch] = useStateValue();
+  const [{user}, dispatch] = useStateValue();
 
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
