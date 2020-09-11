@@ -2,6 +2,8 @@ import React from 'react';
 import './Product.css';
 import {useStateValue} from './StateProvider';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
+
+import { v4 as uuidv4 } from 'uuid';
 function Product({id, title, image, price, rating}) {
   const [{ basket }, dispatch] = useStateValue();
   
@@ -45,7 +47,7 @@ function Product({id, title, image, price, rating}) {
           {Array(rating)
             .fill()
             .map((_, i) => (
-              <p>🌟</p>
+              <p key={uuidv4()}>🌟</p>
             ))}
         </div>
       </div>
